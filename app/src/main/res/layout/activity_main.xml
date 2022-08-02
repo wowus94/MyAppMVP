@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tvText"
+        android:id="@+id/tvTextOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_button_one" />
@@ -18,5 +18,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_1" />
+
+    <TextView
+        android:id="@+id/tvTextTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_button_two" />
+
+    <Button
+        android:id="@+id/btnTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_2" />
+
+    <TextView
+        android:id="@+id/tvTextThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_button_three" />
+
+    <Button
+        android:id="@+id/btnTree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_3" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

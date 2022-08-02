@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">MyAppMVP</string>
     <string name="text_button_one">Text Button One</string>
+    <string name="text_button_two">Text Button Two</string>
+    <string name="text_button_three">Text Button Three</string>
+
     <string name="button_1">Button 1</string>
+    <string name="button_2">Button 2</string>
+    <string name="button_3">Button 3</string>
 </resources>
