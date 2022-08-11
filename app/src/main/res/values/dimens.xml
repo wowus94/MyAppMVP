@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_text_item_user">40sp</dimen>
+    <dimen name="padding_top_item_user">20dp</dimen>
+</resources>

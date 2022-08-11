@@ -1,6 +1,6 @@
-package com.example.myappmvp
+package com.example.myappmvp.repository.impl
 
-class CountersModel {
+class CountersRepository {
 
     private val counters = mutableListOf(1, 1, 1)
 
