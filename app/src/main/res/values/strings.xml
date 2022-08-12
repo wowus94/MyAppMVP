@@ -9,4 +9,5 @@
     <string name="button_3">Button 3</string>
 
     <string name="demo_text_item_user">Text</string>
+    <string name="main_activity_text">Activity</string>
 </resources>

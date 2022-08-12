@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myappmvp.R
 import com.example.myappmvp.model.GithubUser
 
-class UserAdapter() :
+class UserAdapter :
     RecyclerView.Adapter<GithubUserViewHolder>() {
 
     var users: List<GithubUser> = emptyList()
