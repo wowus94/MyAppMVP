@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.example.myappmvp.MyApplication
 import com.example.myappmvp.R
 import com.example.myappmvp.databinding.ActivityMainBinding
+import com.example.myappmvp.presenter.MainPresenter
 import com.example.myappmvp.utils.OnBackPressedListener
 import com.github.terrakok.cicerone.androidx.AppNavigator
 import moxy.MvpAppCompatActivity
@@ -35,8 +36,7 @@ class MainActivity : MvpAppCompatActivity(), MainView {
     override fun onBackPressed() {
         supportFragmentManager.fragments.forEach { currentFragment ->
             if (currentFragment is
-                        OnBackPressedListener && currentFragment.onBackPressed()
-            ) {
+                        OnBackPressedListener && currentFragment.onBackPressed()) {
                 return
             }
         }

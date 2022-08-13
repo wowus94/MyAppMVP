@@ -8,9 +8,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myappmvp.R
 import com.example.myappmvp.model.GithubUser
+import com.example.myappmvp.userlist.OnItemClickListener
 
-class UserAdapter :
-    RecyclerView.Adapter<GithubUserViewHolder>() {
+class UserAdapter(
+    private val onItemClickListener: OnItemClickListener
+) :
+    RecyclerView.Adapter<UserAdapter.GithubUserViewHolder>() {
 
     var users: List<GithubUser> = emptyList()
         @SuppressLint("NotifyDataSetChanged")
@@ -30,13 +33,17 @@ class UserAdapter :
 
     override fun getItemCount() = users.size
 
-}
 
-class GithubUserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class GithubUserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    private val tvLogin by lazy { itemView.findViewById<TextView>(R.id.tvUserLogin) }
+        private val tvLogin by lazy { itemView.findViewById<TextView>(R.id.tvUserLogin) }
 
-    fun bind(item: GithubUser) {
-        tvLogin.text = item.login
+        fun bind(item: GithubUser) = with(item) {
+            tvLogin.text = item.login
+
+            itemView.setOnClickListener {
+                onItemClickListener.onItemClick(login)
+            }
+        }
     }
 }

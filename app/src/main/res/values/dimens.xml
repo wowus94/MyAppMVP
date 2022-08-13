@@ -2,4 +2,5 @@
 <resources>
     <dimen name="size_text_item_user">40sp</dimen>
     <dimen name="padding_top_item_user">20dp</dimen>
+    <dimen name="textsize_login">45sp</dimen>
 </resources>
