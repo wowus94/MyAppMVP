@@ -13,6 +13,8 @@ import com.example.myappmvp.presenter.UserPresenter
 import com.example.myappmvp.repository.impl.GithubRepositoryImpl
 import com.example.myappmvp.userlist.OnItemClickListener
 import com.example.myappmvp.utils.OnBackPressedListener
+import com.example.myappmvp.utils.hide
+import com.example.myappmvp.utils.show
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
@@ -23,6 +25,7 @@ class UserFragment : MvpAppCompatFragment(), UserView, OnBackPressedListener {
             presenter.openUserDetailsFragment(login)
         }
     })
+
 
     companion object {
         fun getInstance(): UserFragment {
@@ -56,6 +59,14 @@ class UserFragment : MvpAppCompatFragment(), UserView, OnBackPressedListener {
 
     override fun initList(list: List<GithubUser>) {
         adapter.users = list
+    }
+
+    override fun showProgressBar() {
+        viewBinding.progressBar.show()
+    }
+
+    override fun hideProgressBar() {
+        viewBinding.progressBar.hide()
     }
 
     override fun onBackPressed() = presenter.onBackPressed()

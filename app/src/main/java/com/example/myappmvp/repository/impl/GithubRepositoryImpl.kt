@@ -1,7 +1,8 @@
 package com.example.myappmvp.repository.impl
 
-import com.example.myappmvp.repository.GithubRepository
 import com.example.myappmvp.model.GithubUser
+import com.example.myappmvp.repository.GithubRepository
+import io.reactivex.rxjava3.core.Single
 
 class GithubRepositoryImpl : GithubRepository {
 
@@ -15,7 +16,10 @@ class GithubRepositoryImpl : GithubRepository {
         GithubUser("Tatyana")
     )
 
-   override fun getUsers(): List<GithubUser> {
-        return repositories
+    override fun getUsers(): Single<List<GithubUser>> {
+        return Single
+            .create<List<GithubUser>> {
+                it.onSuccess(repositories)
+            }
     }
 }
