@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myappmvp.MyApplication
 import com.example.myappmvp.databinding.FragmentUserListBinding
-import com.example.myappmvp.main.UserAdapter
 import com.example.myappmvp.model.GithubUser
+import com.example.myappmvp.network.NetworkProvider
 import com.example.myappmvp.presenter.UserPresenter
 import com.example.myappmvp.repository.impl.GithubRepositoryImpl
 import com.example.myappmvp.userlist.OnItemClickListener
 import com.example.myappmvp.utils.OnBackPressedListener
-import com.example.myappmvp.utils.hide
-import com.example.myappmvp.utils.show
+import com.example.myappmvp.utils.makeGone
+import com.example.myappmvp.utils.makeVisible
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
@@ -36,7 +36,7 @@ class UserFragment : MvpAppCompatFragment(), UserView, OnBackPressedListener {
     private lateinit var viewBinding: FragmentUserListBinding
 
     private val presenter: UserPresenter by moxyPresenter {
-        UserPresenter(GithubRepositoryImpl(), MyApplication.instance.router)
+        UserPresenter(GithubRepositoryImpl(NetworkProvider.usersApi), MyApplication.instance.router)
     }
 
     override fun onCreateView(
@@ -61,14 +61,15 @@ class UserFragment : MvpAppCompatFragment(), UserView, OnBackPressedListener {
         adapter.users = list
     }
 
-    override fun showProgressBar() {
-        viewBinding.progressBar.show()
+    override fun showProgressBar() = with(viewBinding) {
+        recyclerViewGithubUser.makeGone()
+        progressBar.makeVisible()
     }
 
-    override fun hideProgressBar() {
-        viewBinding.progressBar.hide()
+    override fun hideProgressBar() = with(viewBinding) {
+        recyclerViewGithubUser.makeVisible()
+        progressBar.makeGone()
     }
 
     override fun onBackPressed() = presenter.onBackPressed()
-
 }

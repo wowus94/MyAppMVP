@@ -1,14 +1,13 @@
-package com.example.myappmvp.main
+package com.example.myappmvp.user
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myappmvp.R
+import com.example.myappmvp.databinding.ItemUserBinding
 import com.example.myappmvp.model.GithubUser
 import com.example.myappmvp.userlist.OnItemClickListener
+import com.example.myappmvp.utils.loadImage
 
 class UserAdapter(
     private val onItemClickListener: OnItemClickListener
@@ -23,8 +22,8 @@ class UserAdapter(
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GithubUserViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_user, parent, false)
-        return GithubUserViewHolder(view)
+        val binding = ItemUserBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return GithubUserViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: GithubUserViewHolder, position: Int) {
@@ -34,15 +33,17 @@ class UserAdapter(
     override fun getItemCount() = users.size
 
 
-    inner class GithubUserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class GithubUserViewHolder(
+        private val binding: ItemUserBinding
+    ) :
+        RecyclerView.ViewHolder(binding.root) {
 
-        private val tvLogin by lazy { itemView.findViewById<TextView>(R.id.tvUserLogin) }
-
-        fun bind(item: GithubUser) = with(item) {
-            tvLogin.text = item.login
-
+        fun bind(item: GithubUser) = with(binding) {
+            tvUserLogin.text = item.login
+            ivUserAvatar.loadImage(item.avatarUrl)
             itemView.setOnClickListener {
-                onItemClickListener.onItemClick(login)
+                onItemClickListener.onItemClick(item.login)
+
             }
         }
     }

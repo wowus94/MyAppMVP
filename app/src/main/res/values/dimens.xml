@@ -3,4 +3,9 @@
     <dimen name="size_text_item_user">40sp</dimen>
     <dimen name="padding_top_item_user">20dp</dimen>
     <dimen name="textsize_login">45sp</dimen>
+    <dimen name="margin_user_login">20dp</dimen>
+    <dimen name="margin_userAvatar_details_fr">60dp</dimen>
+    <dimen name="margin_userLogin_details_fr">30dp</dimen>
+    <dimen name="text_size_login_details_fr">30sp</dimen>
+    <dimen name="size_avatar_details_fr">150dp</dimen>
 </resources>

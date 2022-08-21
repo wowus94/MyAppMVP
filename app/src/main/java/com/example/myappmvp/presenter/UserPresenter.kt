@@ -1,10 +1,11 @@
 package com.example.myappmvp.presenter
 
-import com.example.myappmvp.navigation.UserLoginScreen
+import com.example.myappmvp.navigation.UserDetailsScreen
 import com.example.myappmvp.repository.GithubRepository
 import com.example.myappmvp.user.UserView
 import com.github.terrakok.cicerone.Router
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.schedulers.Schedulers
 import moxy.MvpPresenter
 import java.util.concurrent.TimeUnit
 
@@ -15,7 +16,7 @@ class UserPresenter(private val repository: GithubRepository, private val router
         super.onFirstViewAttach()
         viewState.showProgressBar()
         repository.getUsers()
-            .delay(3000L, TimeUnit.MILLISECONDS)
+            .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {
@@ -29,7 +30,7 @@ class UserPresenter(private val repository: GithubRepository, private val router
     }
 
     fun openUserDetailsFragment(login: String) {
-        router.navigateTo(UserLoginScreen(login))
+        router.navigateTo(UserDetailsScreen(login))
     }
 
     fun onBackPressed(): Boolean {
