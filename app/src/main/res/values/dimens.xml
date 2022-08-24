@@ -4,8 +4,11 @@
     <dimen name="padding_top_item_user">20dp</dimen>
     <dimen name="textsize_login">45sp</dimen>
     <dimen name="margin_user_login">20dp</dimen>
+    <dimen name="margin_name_repository">20dp</dimen>
     <dimen name="margin_userAvatar_details_fr">60dp</dimen>
-    <dimen name="margin_userLogin_details_fr">30dp</dimen>
+    <dimen name="margin_userLogin_details_fr">25dp</dimen>
+    <dimen name="margin_nameRepository_details_fr">20dp</dimen>
     <dimen name="text_size_login_details_fr">30sp</dimen>
+    <dimen name="text_size_name_repository_details_fr">25sp</dimen>
     <dimen name="size_avatar_details_fr">150dp</dimen>
 </resources>

@@ -71,5 +71,6 @@ class UserFragment : MvpAppCompatFragment(), UserView, OnBackPressedListener {
         progressBar.makeGone()
     }
 
+
     override fun onBackPressed() = presenter.onBackPressed()
 }

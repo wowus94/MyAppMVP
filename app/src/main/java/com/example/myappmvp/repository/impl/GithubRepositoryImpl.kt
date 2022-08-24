@@ -20,4 +20,17 @@ class GithubRepositoryImpl constructor(
         return usersApi.getUser(login)
             .map(UserMapper::mapToEntity)
     }
+
+
+    override fun getUserRepos(
+        login: String,
+        type: String?,
+        sort: String?,
+        direction: String?,
+        perPage: Int?,
+        page: Int?
+    ): Single<GithubUser> {
+        return usersApi.getRepos(login, type, sort, direction, perPage, page)
+            .map(UserMapper::mapToEntity)
+    }
 }
