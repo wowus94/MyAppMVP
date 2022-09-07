@@ -10,4 +10,10 @@
 
     <string name="demo_text_item_user">Text</string>
     <string name="main_activity_text">Activity</string>
+    <string name="btn_convert_image">Convert image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_add_img">Add img</string>
+    <string name="btn_convert_in_png">Convert in .png</string>
+    <string name="btn_cancel">Cancel</string>
 </resources>

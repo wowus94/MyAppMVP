@@ -54,6 +54,7 @@ class UserFragment : MvpAppCompatFragment(), UserView, OnBackPressedListener {
         with(viewBinding) {
             recyclerViewGithubUser.layoutManager = LinearLayoutManager(requireContext())
             recyclerViewGithubUser.adapter = adapter
+            btnConvertImg.setOnClickListener { presenter.imgConverter() }
         }
     }
 

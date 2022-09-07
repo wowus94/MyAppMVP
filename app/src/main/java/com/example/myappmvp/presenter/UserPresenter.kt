@@ -1,5 +1,6 @@
 package com.example.myappmvp.presenter
 
+import com.example.myappmvp.converter.ConverterScreen
 import com.example.myappmvp.navigation.UserDetailsScreen
 import com.example.myappmvp.repository.GithubRepository
 import com.example.myappmvp.user.UserView
@@ -30,6 +31,10 @@ class UserPresenter(private val repository: GithubRepository, private val router
 
     fun openUserDetailsFragment(login: String) {
         router.navigateTo(UserDetailsScreen(login))
+    }
+
+    fun imgConverter() {
+        router.navigateTo(ConverterScreen().imageConverter())
     }
 
     fun onBackPressed(): Boolean {
