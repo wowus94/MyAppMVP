@@ -11,6 +11,7 @@
     <dimen name="text_size_login_details_fr">30sp</dimen>
     <dimen name="text_size_name_repository_details_fr">25sp</dimen>
     <dimen name="size_avatar_details_fr">150dp</dimen>
-    <dimen name="margin_top_btn_add_img">30dp</dimen>
-    <dimen name="margin_100dp">100dp</dimen>
+    <dimen name="margin_top_btn_add_img">15dp</dimen>
+    <dimen name="margin_90dp">90dp</dimen>
+    <dimen name="margin_top_60dp">60dp</dimen>
 </resources>

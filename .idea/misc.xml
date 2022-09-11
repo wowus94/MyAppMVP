@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/StudiesGB/AndroidGB/MyAppMVP/app/src/main/res/drawable/ic_cancel_convert.xml" value="0.1" />
         <entry key="..\:/StudiesGB/AndroidGB/MyAppMVP/app/src/main/res/layout/fragment_details.xml" value="0.25" />
-        <entry key="..\:/StudiesGB/AndroidGB/MyAppMVP/app/src/main/res/layout/fragment_img_converter.xml" value="0.25" />
+        <entry key="..\:/StudiesGB/AndroidGB/MyAppMVP/app/src/main/res/layout/fragment_img_converter.xml" value="0.264" />
         <entry key="..\:/StudiesGB/AndroidGB/MyAppMVP/app/src/main/res/layout/fragment_user_list.xml" value="0.25" />
       </map>
     </option>

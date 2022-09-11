@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/margin_100dp"
+        android:layout_marginTop="@dimen/margin_90dp"
         android:src="@drawable/ic_jpg" />
 
     <Button
@@ -28,19 +28,33 @@
         android:layout_marginTop="100dp"
         android:text="@string/btn_convert_in_png" />
 
+    <ProgressBar
+        android:id="@+id/progressBarTwo"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
     <ImageView
         android:id="@+id/iv_convert_png"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/margin_100dp"
+        android:layout_marginTop="@dimen/margin_90dp"
         android:src="@drawable/ic_png" />
+
+    <ImageView
+        android:id="@+id/iv_cancel_convert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_top_60dp"
+        android:src="@drawable/ic_cancel_convert" />
 
     <Button
         android:id="@+id/btn_cancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
         android:text="@string/btn_cancel" />
 
 </LinearLayout>
